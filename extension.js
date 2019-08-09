@@ -1,7 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 "use strict";
-require('module-alias/register');
 const vscode = require('vscode');
 const generator = require('./lib/generator');
 
@@ -14,6 +13,7 @@ const generator = require('./lib/generator');
 function activate(context) {
 
 	// This line of code will only be executed once when your extension is activated
+	// @ts-ignore
 	console.log('Congratulations, your extension "akos" is now active!');
 
 	// The command has been defined in the package.json file
