@@ -49,7 +49,8 @@
 		"vscode": "^1.1.25",
 		"eslint": "^4.11.0",
 		"@types/node": "^8.10.25",
-		"@types/mocha": "^2.2.42"
+		"@types/mocha": "^2.2.42",
+		"module-alias": "^2.0.3"
 	},
 	"_moduleAliases": {
 		"@": "./generator",
