@@ -42,7 +42,7 @@ module.exports.retrieve = function (tableName, functionName) {
     Template = Template.replace(/\{\{Function_name\}\}/g, functionName)
     return Template;
 }
-// 初始化新增方法create
+// 初始化新增方法create-C
 module.exports.create = function (tableName, functionName) {
     if (!tableName)
         tableName = 'model';
@@ -55,6 +55,44 @@ module.exports.create = function (tableName, functionName) {
         '        throw error;\n' +
         '    });\n' +
         '}';
+    Template = Template.replace(/\{\{Table_name\}\}/g, tableName)
+    Template = Template.replace(/\{\{Function_name\}\}/g, functionName)
+    return Template;
+}
+// 初始化更新方法update-U
+module.exports.update = function (tableName, functionName) {
+    if (!tableName)
+        tableName = 'model';
+    if (!functionName)
+        functionName = 'update';
+    let Template = '// 数据库更新操作\n' +
+        '{{Function_name}}(model) {\n' +
+        '    return {{Table_name}}.query((qb) => {\n' +
+        '        qb.where(\'Id\', \'=\', model.Id);//筛选条件自行适配\n' +
+        '    }).save(model, { method: \'update\', require: false }).then((info) => info && info.toJSON()).catch((error) => {\n' +
+        '        console.error(error);\n' +
+        '        throw error;\n' +
+        '    });\n' +
+        '},';
+    Template = Template.replace(/\{\{Table_name\}\}/g, tableName)
+    Template = Template.replace(/\{\{Function_name\}\}/g, functionName)
+    return Template;
+}
+// 初始化删除方法delete-D
+module.exports.delete = function (tableName, functionName) {
+    if (!tableName)
+        tableName = 'model';
+    if (!functionName)
+        functionName = 'delete';
+    let Template = '// 数据库删除操作\n' +
+        '{{Function_name}}(model) {\n' +
+        '    return {{Table_name}}.query((qb) => {\n' +
+        '        qb.where(\'Id\', \'=\', model.Id); //条件自行适配\n' +
+        '    }).destroy({ require: false }).then((info) => info && info.toJSON()).catch((error) => {\n' +
+        '        console.error(error);\n' +
+        '        throw error;\n' +
+        '    });\n' +
+        '},';
     Template = Template.replace(/\{\{Table_name\}\}/g, tableName)
     Template = Template.replace(/\{\{Function_name\}\}/g, functionName)
     return Template;
