@@ -1,5 +1,7 @@
 // 初始化数据表table结构
 module.exports.table = function (tableName) {
+    if (!tableName)
+        tableName = 'model';
     let Template = 'const {{Table_name}} = db.Model.extend({\n' +
         '    // table关联模板\n' +
         '    tableName: \'{{Table_name}}\',\n' +
@@ -10,6 +12,8 @@ module.exports.table = function (tableName) {
 }
 // 初始化数据库操作service
 module.exports.service = function (tableName) {
+    if (!tableName)
+        tableName = 'model';
     let Template = 'const knex = require(\'@/model/db\').knex;\n' +
         'const ipUpHistory = require(\'@/model/local\').{{Table_name}};\n' +
         'const log = require(\'@/utils/logger\').createLogger(\'app:service:{{Table_name}}Db\');\n' +

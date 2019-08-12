@@ -1,4 +1,4 @@
-# akos README
+# Akos vscode plugin 
 
 This is the README for your extension "akos". After writing up a brief description, we recommend including the following sections.
 

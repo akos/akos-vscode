@@ -1,5 +1,6 @@
 const init = require('./code_snippets/init');
 const bookshelf = require('./code_snippets/bookshelf');
+const request = require('./code_snippets/request');
 module.exports = {
     getSnippets(data) {
         let content = '';
@@ -19,8 +20,14 @@ module.exports = {
                         content = init(key, dataList);
                         break;
                     case 'bk':
+                    case 'bookshelf':
                         content = bookshelf(key, dataList);
                         break;
+                    case 'request':
+                    case 'rp':
+                        content = request(key, dataList);
+                        break;
+
                     default:
                         break;
                 }
