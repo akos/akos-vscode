@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 "use strict";
 const vscode = require('vscode');
-const generator = require('./lib/generator');
+const generator = require('./src/generator');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -29,7 +29,7 @@ function activate(context) {
 
 		const activeTextEditor = vscode.window.activeTextEditor;
 		const activeDocument = activeTextEditor.document;
-
+		const activeText = activeDocument.getText();
 		// 1. Get all the selected line information
 		const selection = activeTextEditor.selection;
 		// sample for selection: {"start":{"line":2,"character":0},"end":{"line":2,"character":7},"active":{"line":2,"character":7},"anchor":{"line":2,"character":0}}
@@ -53,6 +53,7 @@ function activate(context) {
 
 		// 调用编辑接口
 		activeTextEditor.edit((TextEditorEdit) => {
+			const activeTextLine = activeText.split('/n');
 			const { operation, content } = generator.getSnippets(curText);
 			if (operation) {
 				TextEditorEdit.replace(new vscode.Range(start, end), content);
