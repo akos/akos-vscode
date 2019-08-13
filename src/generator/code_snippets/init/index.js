@@ -1,5 +1,6 @@
 module.exports = function (key, dataList) {
     let content = '';
+    const name = dataList[3];
     switch (key) {
         case 'app':
             // akos_init_app
@@ -11,8 +12,11 @@ module.exports = function (key, dataList) {
             break;
         case 'model':
             // akos_init_model_{name}
-            const name = dataList[3];
             content = require('./template/model.tpl')(name);
+            break;
+        case 'config':
+            // akos_init_config
+            content = require('./template/config.tpl')();
             break;
         default:
             break;

@@ -12,7 +12,9 @@
 		"theme": "dark"
 	  },
 	"categories": [
-		"Other"
+		"Other",
+		"Snippets",
+        "Programming Languages"
 	],
 	"activationEvents": [
 		"onCommand:extension.akos"
@@ -53,7 +55,17 @@
 					"description": "描述与值的分隔符，默认: "
 				}
 			}
-		}
+		},
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./src/snippets/javascript.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./src/snippets/lodash.json"
+			}
+		]
 	},
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",
