@@ -77,6 +77,6 @@
                 "    });",
                 "},"
         ],
-        "description": "Akos: post method base on request_promise."
+        "description": "Akos: put method base on request_promise."
     }
 }

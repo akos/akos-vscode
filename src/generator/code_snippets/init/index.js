@@ -18,6 +18,16 @@ module.exports = function (key, dataList) {
             // akos_init_config
             content = require('./template/config.tpl')();
             break;
+        case 'controller':
+        case 'ctr':
+            // akos_init_controller
+            content = require('./template/controller.tpl')(name);
+            break;
+            case 'controller':
+        case 'service':
+            // akos_init_service
+            content = require('./template/service.tpl')(name);
+            break;
         default:
             break;
     }
