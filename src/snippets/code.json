@@ -1,0 +1,82 @@
+{
+    "rp_get": {
+        "prefix": "rp_get",
+        "body": [
+            "get(model) {",
+            "    // 请求路径",
+            "    const uri = `${config.url}/${model.path}`; // 默认从config中获取请求地址，请求路径作为传参",
+            "    const options = {",
+            "        method: 'GET',",
+            "        uri,",
+            "        json: true,",
+            "    };",
+            "    if (model.qs)",
+            "        options.qs = model.qs;",
+            "    return rp(options).then((response) => {",
+            "        // 输出请求结果",
+            "        console.log(JSON.stringify(response));",
+            "        return response;",
+            "    }).catch((error) => {",
+            "        // 输出错误信息",
+            "        console.error(JSON.stringify(error));",
+            "        throw error;",
+            "    });",
+            "},"
+        ],
+        "description": "Akos: get method base on request_promise."
+    },
+    "rp_post": {
+        "prefix": "rp_post",
+        "body": [
+            "post(model) {",
+                "    const uri = `${config.ownUrl}/${model.path}`;",
+                "    let body = {};",
+                "     const options = {",
+                "        method: 'POST',",
+                "        uri,",
+                "        body,",
+                "        json: true,",
+                "    };",
+                "    if (model.body)",
+                "        options.body = model.body;",
+                "    return rp(options).then((response) => {",
+                "        // 输出请求结果",
+                "        console.log(JSON.stringify(response));",
+                "        return response;",
+                "    }).catch((error) => {",
+                "        // 输出错误信息",
+                "        console.error(JSON.stringify(error));",
+                "        throw error;",
+                "    });",
+                "},"
+        ],
+        "description": "Akos: post method base on request_promise."
+    },
+    "rp_put": {
+        "prefix": "rp_put",
+        "body": [
+            "post(model) {",
+                "    const uri = `${config.ownUrl}/${model.path}`;",
+                "    let body = {};",
+                "     const options = {",
+                "        method: 'PUT',",
+                "        uri,",
+                "        body,",
+                "        json: true,",
+                "    };",
+                "    if (model.body)",
+                "        options.body = model.body;",
+                "    return rp(options).then((response) => {",
+                "        // 输出请求结果",
+                "        console.log(JSON.stringify(response));",
+                "        return response;",
+                "    }).catch((error) => {",
+                "        // 输出错误信息",
+                "        console.error(JSON.stringify(error));",
+                "        throw error;",
+                "    });",
+                "},"
+        ],
+        "description": "Akos: post method base on request_promise."
+    }
+}

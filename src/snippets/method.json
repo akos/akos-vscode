@@ -1,11 +1,30 @@
 {
-    "for循环": {
-        "prefix": "for",
-        "body": [
-          "for (const ${2:item} of ${1:array}) {",
-          "\t$0",
-          "}"
-        ],
-        "description": "for循环"
-    }
+  "allEqual": {
+    "prefix": "allEqual",
+    "body": [
+      "const allEqual = arr => arr.every(val => val === arr[0]);"
+    ],
+    "description": "Akos:Check if all elements in an array are equal.Use Array.prototype.every() to check if all the elements of the array are the same as the first one. Elements in the array are compared using the strict comparison operator, which does not account for NaN self-inequality."
+  },
+  "average": {
+    "prefix": "average",
+    "body": [
+      "const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.length;"
+    ],
+    "description": "Akos:Returns the average of two or more numbers. Use Array.prototype.reduce() to add each value to an accumulator, initialized with a value of 0, divide by the length of the array."
+  },
+  "findKey": {
+    "prefix": "findKey",
+    "body": [
+      "const findKey = (obj, fn) => Object.keys(obj).find(key => fn(obj[key], key, obj));"
+    ],
+    "description": "Akos:Returns the first key that satisfies the provided testing function. Otherwise undefined is returned. Use Object.keys(obj) to get all the properties of the object, Array.prototype.find() to test the provided function for each key-value pair. The callback receives three arguments - the value, the key and the object."
+  },
+  "findLast": {
+    "prefix": "findLast",
+    "body": [
+      "const findLast = (arr, fn) => arr.filter(fn).pop();"
+    ],
+    "description": "Akos:Returns the last element for which the provided function returns a truthy value. Use Array.prototype.filter() to remove elements for which fn returns falsy values, Array.prototype.pop() to get the last one."
+  }
 }

@@ -59,11 +59,15 @@
 		"snippets": [
 			{
 				"language": "javascript",
-				"path": "./src/snippets/javascript.json"
+				"path": "./src/snippets/method.json"
 			},
 			{
 				"language": "javascript",
 				"path": "./src/snippets/lodash.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./src/snippets/code.json"
 			}
 		]
 	},
