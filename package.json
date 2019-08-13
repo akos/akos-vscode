@@ -7,6 +7,10 @@
 	"engines": {
 		"vscode": "^1.0.0"
 	},
+	"galleryBanner": {
+		"color": "#457cd0",
+		"theme": "dark"
+	  },
 	"categories": [
 		"Other"
 	],
@@ -18,9 +22,20 @@
 		"commands": [
 			{
 				"command": "extension.akos",
-				"title": "akos"
+				"title": "akos",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				  }
 			}
 		],
+		"menus": {
+			"editor/title": [{
+				"when": "resourceLangId == javascript",
+				"command": "extension.akos",
+				"group": "navigation"
+			}]
+		},
 		"keybindings": [
 			{
 				"key": "ctrl+alt+l",

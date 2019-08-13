@@ -11,6 +11,11 @@ module.exports = function (key, dataList) {
             // akos_request_post_{function_name}
             content = require('./template/common.tpl').post(dataList[3]);
             break;
+        case 'put':
+        case 'Put':
+            // akos_request_put_{function_name}
+            content = require('./template/common.tpl').put(dataList[3]);
+            break;
         default:
             break;
     }

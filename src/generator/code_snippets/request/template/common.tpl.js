@@ -56,3 +56,32 @@ module.exports.post = function (functionName) {
     Template = Template.replace(/\{\{Function_name\}\}/g, functionName)
     return Template;
 }
+// 初始化put方法
+module.exports.put = function (functionName) {
+    if(!functionName)
+      functionName = 'put'
+    let Template = '// rp需要引入request-promise\n' +
+    '{{Function_name}}(model) {\n' +
+    '    const uri = `${config.ownUrl}/${model.path}`;\n' +
+    '    let body = {};\n' +
+    '     const options = {\n' +
+    '        method: \'PUT\',\n' +
+    '        uri,\n' +
+    '        body,\n' +
+    '        json: true,\n' +
+    '    };\n' +
+    '    if (model.body)\n' +
+    '        options.body = model.body;\n' +
+    '    return rp(options).then((response) => {\n' +
+    '        // 输出请求结果\n' +
+    '        console.log(JSON.stringify(response));\n' +
+    '        return response;\n' +
+    '    }).catch((error) => {\n' +
+    '        // 输出错误信息\n' +
+    '        console.error(JSON.stringify(error));\n' +
+    '        throw error;\n' +
+    '    });\n' +
+    '},';
+    Template = Template.replace(/\{\{Function_name\}\}/g, functionName)
+    return Template;
+}
