@@ -2,9 +2,14 @@
 
 This is the README for your extension "akos". After writing up a brief description, we recommend including the following sections.
 
-## Features
+## 功能描述
+### 基于akos模板代码片段使用
+akos模板片段使用规则说明[链接]。--待补全文档
+可使用快捷键ctrl+alt+l(可自定义)或者图标。
+使用图标生成模板方式展示如下:
+![用法举例](./assets/akos_init_app.gif)
 
-Akos集成30-seconds代码片段
+### Akos集成30-seconds代码片段
 识别akos_{方法名}为前缀，自动联想代码。方法名使用文档请查看[链接](./assets/doc/method.md).
 用法举例: akos_CSVToArray
 文档说明
