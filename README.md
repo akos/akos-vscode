@@ -16,6 +16,7 @@ Use `Array.prototype.slice()` and `Array.prototype.indexOf('\n')` to remove the 
 Use `String.prototype.split('\n')` to create a string for each row, then `String.prototype.split(delimiter)` to separate the values in each row.
 Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 Omit the third argument, `omitFirstRow`, to include the first row (title row) of the CSV string.
+
 ```js
 const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
   data
@@ -23,15 +24,14 @@ const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
     .split('\n')
     .map(v => v.split(delimiter));
 ```
-插件使用举例
-![用法举例](./assets/akos_CSVToArray.gif)
 
 ```js
 CSVToArray('a,b\nc,d'); // [['a','b'],['c','d']];
 CSVToArray('a;b\nc;d', ';'); // [['a','b'],['c','d']];
 CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
 ```
-
+插件使用说明
+![用法举例](./assets/akos_CSVToArray.gif)
 
 ## Requirements
 
