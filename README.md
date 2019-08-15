@@ -25,6 +25,7 @@ const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
     .split('\n')
     .map(v => v.split(delimiter));
 ```
+![用法举例](./assets/akos_CSVToArray.gif)
 
 ```js
 CSVToArray('a,b\nc,d'); // [['a','b'],['c','d']];
