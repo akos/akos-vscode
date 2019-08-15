@@ -4,7 +4,34 @@ This is the README for your extension "akos". After writing up a brief descripti
 
 ## Features
 
-Akos集成30-seconds代码片段，用法: akos_CSVToArray,自动联想代码，[使用文档](./assets/doc/method.md)
+Akos集成30-seconds代码片段
+识别akos_{方法名}为前缀，自动联想代码。方法名使用文档请查看[链接](./assets/doc/method.md).
+用法举例: akos_CSVToArray
+文档说明
+### CSVToArray
+
+Converts a comma-separated values (CSV) string to a 2D array.
+
+Use `Array.prototype.slice()` and `Array.prototype.indexOf('\n')` to remove the first row (title row) if `omitFirstRow` is `true`.
+Use `String.prototype.split('\n')` to create a string for each row, then `String.prototype.split(delimiter)` to separate the values in each row.
+Omit the second argument, `delimiter`, to use a default delimiter of `,`.
+Omit the third argument, `omitFirstRow`, to include the first row (title row) of the CSV string.
+插件使用
+
+```js
+const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
+  data
+    .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+    .split('\n')
+    .map(v => v.split(delimiter));
+```
+
+```js
+CSVToArray('a,b\nc,d'); // [['a','b'],['c','d']];
+CSVToArray('a;b\nc;d', ';'); // [['a','b'],['c','d']];
+CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
+```
+
 
 ## Requirements
 

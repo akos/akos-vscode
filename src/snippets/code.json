@@ -1,6 +1,6 @@
 {
     "rp_get": {
-        "prefix": "rp_get",
+        "prefix": "akos_rp_get",
         "body": [
             "get(model) {",
             "    // 请求路径",
@@ -26,7 +26,7 @@
         "description": "Akos: get method base on request_promise."
     },
     "rp_post": {
-        "prefix": "rp_post",
+        "prefix": "akos_rp_post",
         "body": [
             "post(model) {",
                 "    const uri = `${config.ownUrl}/${model.path}`;",
@@ -53,7 +53,7 @@
         "description": "Akos: post method base on request_promise."
     },
     "rp_put": {
-        "prefix": "rp_put",
+        "prefix": "akos_rp_put",
         "body": [
             "post(model) {",
                 "    const uri = `${config.ownUrl}/${model.path}`;",
