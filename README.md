@@ -40,7 +40,7 @@ CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
 ![用法举例](./assets/akos_CSVToArray.gif)
 
 ### 三、Akos集成lodash使用方法
-输入"_.",进行联想,使用说明，待补全
+输入"_",进行联想输入,使用说明，待补全
 #### 使用展示如下
 ![用法举例](./assets/lodash.gif)
 ## Requirements
