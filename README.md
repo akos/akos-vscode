@@ -39,6 +39,10 @@ CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a','b'],['c','d']];
 插件使用说明
 ![用法举例](./assets/akos_CSVToArray.gif)
 
+### 三、Akos集成lodash使用方法
+输入"_.",进行联想,使用说明，待补全
+#### 使用展示如下
+![用法举例](./assets/lodash.gif)
 ## Requirements
 
 If you have any requirements or dependencies, add a section describing those and how to install and configure them.
